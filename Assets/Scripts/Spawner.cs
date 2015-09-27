@@ -4,7 +4,9 @@ using System.Collections;
 public class Spawner : MonoBehaviour
 {
     public GameObject spawnable;
-    public float spawnInterval = 0.5f;
+    public float minInterval = 0.5f;
+    public float maxInterval = 1.5f;
+    private float spawnInterval;
     private float timeSinceLastSpawn = 0f;
     private float timePassed = 0f;
 
@@ -22,6 +24,7 @@ public class Spawner : MonoBehaviour
         levelBounds = ground.GetComponent<Renderer>().bounds;
         leftLimit = (levelBounds.min.x + edgeDistance);
         rightLimit = (levelBounds.max.x - edgeDistance);
+        spawnInterval = Random.Range(minInterval, maxInterval);
     }
 	
     // Update is called once per frame
@@ -34,9 +37,11 @@ public class Spawner : MonoBehaviour
         {
             Spawn();
             timeSinceLastSpawn -= spawnInterval;
+            spawnInterval = Random.Range(minInterval, maxInterval);
         }
     }
-
+    //TODO How can I remove these stupid Ground references?
+    // I don't wanna use a Singleton for the Ground which gets its instance via String reference.
     private void Spawn()
     {
         float spawnX = Random.Range(leftLimit, rightLimit);
@@ -48,5 +53,10 @@ public class Spawner : MonoBehaviour
         {
             newObject.GetComponent<DestroyWhenOutOfBounds>().ground = ground;
         }
+        if (newObject.GetComponent<EnemyMovement>() != null)
+        {
+            newObject.GetComponent<EnemyMovement>().ground = ground;
+        }
+
     }
 }

@@ -31,4 +31,18 @@ public class PlayerHealth : MonoBehaviour
         }
 
     }
+
+    public void increaseHealth()
+    {
+        Debug.Log("IncreaseHealth");
+        PlayerWeapon[] allWeapons = GetComponentsInChildren<PlayerWeapon>(true);
+        foreach (var playerWeapon in allWeapons)
+        {
+            if (playerWeapon.gameObject.activeSelf == false)
+            {
+                playerWeapon.gameObject.SetActive(true);
+                break;
+            }
+        }
+    }
 }
