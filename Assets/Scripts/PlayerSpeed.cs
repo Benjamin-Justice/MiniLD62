@@ -1,29 +1,22 @@
 ﻿using UnityEngine;
 
 
-public class PlayerSpeed : MonoBehaviour
+public class PlayerSpeed
 {
-    public float maxSpeed = 20f;
-    public float currentSpeed = 1f;
-    public float acceleration = 20f;
+    private static float maxSpeed = 20f;
+    public static float currentSpeed = 1f;
+    private static float acceleration = 20f;
 
-    // Use this for initialization
-    void Start()
-    {
-        
-    }
-
-    public void resetSpeed()
+    public static void ResetSpeed()
     {
         currentSpeed = 1f;
     }
-	
-    // Update is called once per frame
-    void Update()
+
+    public static void UpdateSpeed(float deltaTime)
     {
         if (maxSpeed - currentSpeed > 0.3f)
         {
-            currentSpeed += (1f / currentSpeed) * acceleration * Time.deltaTime;
+            currentSpeed += (1f / currentSpeed) * acceleration * deltaTime;
         }
         else
         {

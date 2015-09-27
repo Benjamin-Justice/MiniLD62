@@ -46,25 +46,26 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\HandleEscape.cs" />
-     <Compile Include="Assets\MoveMothership.cs" />
-     <Compile Include="Assets\PlayBackgroundMusic.cs" />
-     <Compile Include="Assets\PlayerWeapon.cs" />
      <Compile Include="Assets\Scripts\AttackWithInput.cs" />
      <Compile Include="Assets\Scripts\DamagePlayerOnHit.cs" />
      <Compile Include="Assets\Scripts\DestroyWhenOutOfBounds.cs" />
      <Compile Include="Assets\Scripts\DisplayScore.cs" />
      <Compile Include="Assets\Scripts\EnemyHealth.cs" />
      <Compile Include="Assets\Scripts\FpsDisplay.cs" />
+     <Compile Include="Assets\Scripts\HandleEscape.cs" />
      <Compile Include="Assets\Scripts\MoveForward.cs" />
+     <Compile Include="Assets\Scripts\MoveMothership.cs" />
      <Compile Include="Assets\Scripts\MoveTexture.cs" />
      <Compile Include="Assets\Scripts\MoveWithEnvironment.cs" />
      <Compile Include="Assets\Scripts\MoveWithInput.cs" />
      <Compile Include="Assets\Scripts\PlayerBullet.cs" />
      <Compile Include="Assets\Scripts\PlayerHealth.cs" />
      <Compile Include="Assets\Scripts\PlayerSpeed.cs" />
+     <Compile Include="Assets\Scripts\PlayerWeapon.cs" />
      <Compile Include="Assets\Scripts\ScoreManager.cs" />
      <Compile Include="Assets\Scripts\Spawner.cs" />
+     <Compile Include="Assets\Scripts\StartButton.cs" />
+     <Compile Include="Assets\Scripts\Util.cs" />
      <Compile Include="Assets\SimpleParticlePack\Scripts\ParticleTester.cs" />
      <Compile Include="Assets\Sky FX Pack\Scripts\LightBeamsControlScript.cs" />
      <Compile Include="Assets\Sky FX Pack\Scripts\LookAtBehaviour.cs" />
@@ -72,8 +73,7 @@
      <Compile Include="Assets\Sky FX Pack\Scripts\RayBehavior.cs" />
      <Compile Include="Assets\Sky FX Pack\Scripts\RotateBehaviour.cs" />
      <Compile Include="Assets\Sky FX Pack\Scripts\ScrollBehaviour.cs" />
-     <Compile Include="Assets\StartButton.cs" />
-     <None Include="Assets\batteries\SciFi_Battery_Pack_free\SCI-fi battery pack FREE.txt" />
+     <Compile Include="Assets\UpdatePlayerSpeed.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/opt/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

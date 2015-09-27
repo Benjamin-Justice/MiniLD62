@@ -3,7 +3,6 @@ using System.Collections;
 
 public class MoveForward : MonoBehaviour
 {
-    public PlayerSpeed playerSpeed;
     public float speed = 40f;
 
     // Use this for initialization
@@ -15,6 +14,6 @@ public class MoveForward : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(0f, 0f, Time.deltaTime * (speed - playerSpeed.currentSpeed));
+        transform.Translate(0f, 0f, Time.deltaTime * (speed - PlayerSpeed.currentSpeed));
     }
 }

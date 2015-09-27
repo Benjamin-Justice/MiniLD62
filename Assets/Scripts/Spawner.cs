@@ -10,7 +10,6 @@ public class Spawner : MonoBehaviour
 
     public GameObject ground;
 
-    public PlayerSpeed playerSpeed;
     public float edgeDistance = 1f;
 
     private Bounds levelBounds;
@@ -45,14 +44,6 @@ public class Spawner : MonoBehaviour
         Vector3 spawnPosition = new Vector3(spawnX, 0.5f, spawnZ);
 
         GameObject newObject = (GameObject)Object.Instantiate(spawnable, spawnPosition, spawnable.transform.localRotation);
-        if (GetComponent<ScoreManager>() != null && newObject.GetComponent<EnemyHealth>() != null)
-        {
-            newObject.GetComponent<EnemyHealth>().scoreManager = GetComponent<ScoreManager>();
-        }
-        if (playerSpeed != null && newObject.GetComponent<MoveWithEnvironment>() != null)
-        {
-            newObject.GetComponent<MoveWithEnvironment>().playerSpeed = playerSpeed;
-        }
         if (newObject.GetComponent<DestroyWhenOutOfBounds>() != null)
         {
             newObject.GetComponent<DestroyWhenOutOfBounds>().ground = ground;

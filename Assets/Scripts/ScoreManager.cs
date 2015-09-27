@@ -6,35 +6,7 @@ using UnityEngine.UI;
 using System;
 
 
-public class ScoreManager : MonoBehaviour
+public class ScoreManager
 {
-
-    public Text scoreValueText;
-    private int score;
-
-    public int Score
-    {
-        get
-        {
-            return score;
-        }
-        set
-        {
-            score = value;
-            scoreValueText.text = value.ToString();
-        }
-    }
-
-
-    // Use this for initialization
-    void Start()
-    {
-        
-    }
-	
-    // Update is called once per frame
-    void Update()
-    {
-	    
-    }
+    public static int score;
 }

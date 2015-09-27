@@ -5,7 +5,6 @@ using System.Collections;
 // See reduceHealth method for ugliness.
 public class PlayerHealth : MonoBehaviour
 {
-
     // Use this for initialization
     void Start()
     {
@@ -24,15 +23,11 @@ public class PlayerHealth : MonoBehaviour
         if (weapons.Length > 1)
         {
             weapons [weapons.Length - 1].gameObject.SetActive(false);
-            PlayerSpeed playerSpeed = GetComponentInParent<PlayerSpeed>();
-            if (playerSpeed != null)
-            {
-                playerSpeed.resetSpeed();
-            }
+            PlayerSpeed.ResetSpeed();
         }
         else
         {
-            Application.LoadLevel(Application.loadedLevel);
+            Util.QuitLevel(ScoreManager.score);
         }
 
     }

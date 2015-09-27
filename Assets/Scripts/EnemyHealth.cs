@@ -4,7 +4,6 @@ using System.Collections;
 public class EnemyHealth : MonoBehaviour
 {
     public int maxHealth = 2;
-    public ScoreManager scoreManager;
     private int currentHealth;
 
     // Use this for initialization
@@ -18,10 +17,7 @@ public class EnemyHealth : MonoBehaviour
     {
         if (currentHealth < 1)
         {
-            if (scoreManager != null)
-            {
-                scoreManager.Score += 1;
-            }
+            ScoreManager.score += 1;
             Object.Destroy(gameObject);
         }
     }
