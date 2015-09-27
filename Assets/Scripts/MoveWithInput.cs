@@ -7,13 +7,12 @@ using UnityEngine.UI;
 public class MoveWithInput : MonoBehaviour
 {
     public float moveSpeed = 20f;
-    public GameObject leftWall;
-    public GameObject rightWall;
+    public GameObject ground;
     public GameObject graphicsNode;
-    public float edgeDistance = 1f;
+    public float edgeDistance = 1.7f;
 
     public float maxRotation = 65f;
-    public float rotationSpeed = 10f;
+    public float rotationSpeed = 5f;
     public float rotationRelaxSpeed = 5f;
 
     private float minRotation = 10f;
@@ -23,12 +22,14 @@ public class MoveWithInput : MonoBehaviour
 
     private float rightLimit;
     private float leftLimit;
+    private Bounds levelBounds;
 
     // Use this for initialization
     void Start()
     {
-        leftLimit = (leftWall.transform.localPosition.x + edgeDistance);
-        rightLimit = (rightWall.transform.localPosition.x - edgeDistance);
+        levelBounds = ground.GetComponent<Renderer>().bounds;
+        leftLimit = (levelBounds.min.x + edgeDistance);
+        rightLimit = (levelBounds.max.x - edgeDistance);
     }
 
     // Update is called once per frame
@@ -41,8 +42,8 @@ public class MoveWithInput : MonoBehaviour
         {
             if (Input.acceleration.x > 0.05f)
             {
-                accelerationValue = Input.acceleration.x;
-                if (accelerationValue > 0.3f)
+                accelerationValue = Input.acceleration.x * 1.5f;
+                if (accelerationValue > 0.5f || accelerationValue > 0.3f && isInTurbo)
                 {
                     accelerationValue = 1f;
                 }
@@ -50,8 +51,8 @@ public class MoveWithInput : MonoBehaviour
             }
             else if (Input.acceleration.x < -0.05f)
             {
-                accelerationValue = Input.acceleration.x;
-                if (accelerationValue < -0.3f)
+                accelerationValue = Input.acceleration.x * 1.5f;
+                if (accelerationValue < -0.5f || accelerationValue < 0.3f && isInTurbo)
                 {
                     accelerationValue = -1f;
                 }
@@ -127,6 +128,7 @@ public class MoveWithInput : MonoBehaviour
         }
     }
 
+    //TODO why did I need the accel here again?
     bool IsWithinZRotationBounds(float zRotation, float acceleration)
     {
         bool result = zRotation > 360 - maxRotation * acceleration || zRotation < maxRotation * acceleration;

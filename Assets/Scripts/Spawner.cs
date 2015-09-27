@@ -4,42 +4,58 @@ using System.Collections;
 public class Spawner : MonoBehaviour
 {
     public GameObject spawnable;
-    public float interval = 0.500f;
-    private float timePassed = 0.0f;
+    public float spawnInterval = 0.5f;
+    private float timeSinceLastSpawn = 0f;
+    private float timePassed = 0f;
 
-    public GameObject leftWall;
-    public GameObject rightWall;
-    public float edgeDistance = 1.0f;
+    public GameObject ground;
 
+    public PlayerSpeed playerSpeed;
+    public float edgeDistance = 1f;
+
+    private Bounds levelBounds;
     private float rightLimit;
     private float leftLimit;
 
     // Use this for initialization
     void Start()
     {
-        leftLimit = (leftWall.transform.localPosition.x + edgeDistance);
-        rightLimit = (rightWall.transform.localPosition.x - edgeDistance);
+        levelBounds = ground.GetComponent<Renderer>().bounds;
+        leftLimit = (levelBounds.min.x + edgeDistance);
+        rightLimit = (levelBounds.max.x - edgeDistance);
     }
 	
     // Update is called once per frame
     void Update()
     {
         timePassed += Time.deltaTime;
-        if (timePassed > interval)
+        timeSinceLastSpawn += Time.deltaTime;
+
+        if (timeSinceLastSpawn > spawnInterval)
         {
             Spawn();
-            timePassed -= interval;
+            timeSinceLastSpawn -= spawnInterval;
         }
     }
 
     private void Spawn()
     {
         float spawnX = Random.Range(leftLimit, rightLimit);
-        Vector3 spawnPosition = new Vector3(spawnX, 0.5f, 60.0f);
+        float spawnZ = levelBounds.max.z - 10f;
+        Vector3 spawnPosition = new Vector3(spawnX, 0.5f, spawnZ);
+
         GameObject newObject = (GameObject)Object.Instantiate(spawnable, spawnPosition, spawnable.transform.localRotation);
-        if (GetComponent<ScoreManager>() != null && newObject.GetComponent<EnemyHealth>())
+        if (GetComponent<ScoreManager>() != null && newObject.GetComponent<EnemyHealth>() != null)
         {
             newObject.GetComponent<EnemyHealth>().scoreManager = GetComponent<ScoreManager>();
+        }
+        if (playerSpeed != null && newObject.GetComponent<MoveWithEnvironment>() != null)
+        {
+            newObject.GetComponent<MoveWithEnvironment>().playerSpeed = playerSpeed;
+        }
+        if (newObject.GetComponent<DestroyWhenOutOfBounds>() != null)
+        {
+            newObject.GetComponent<DestroyWhenOutOfBounds>().ground = ground;
         }
     }
 }

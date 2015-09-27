@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[RequireComponent(typeof(Rigidbody))]
 public class DamagePlayerOnHit : MonoBehaviour
 {
 
@@ -18,9 +19,10 @@ public class DamagePlayerOnHit : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetComponent<PlayerHealth>() != null)
+        var playerHealth = other.gameObject.GetComponent<PlayerHealth>();
+        if (playerHealth != null)
         {
-            Application.LoadLevel(Application.loadedLevel);
+            playerHealth.reduceHealth();
         }
     }
 }

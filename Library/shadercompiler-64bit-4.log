@@ -1,17 +1,6 @@
 Base path: /opt/Unity/Editor/Data
-Pipe name: \\.\pipe\UnityShaderCompiler-64bit-4-1839994624
+Pipe name: \\.\pipe\UnityShaderCompiler-64bit-4--1070786816
 Cmd: getPlatforms
-Cmd: compileSnippet
-  api=9 type=0 insize=977 outsize=22638 kw=DIRECTIONAL SHADOWS_SCREEN SHADOWS_NATIVE LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF VERTEXLIGHT_ON _PARALLAXMAP _NORMALMAP _SPECGLOSSMAP ok=1
-Cmd: compileSnippet
-  api=9 type=0 insize=934 outsize=18977 kw=POINT SHADOWS_OFF _PARALLAXMAP _NORMALMAP _SPECGLOSSMAP ok=1
-Cmd: compileSnippet
-  api=9 type=0 insize=934 outsize=19873 kw=POINT SHADOWS_CUBE _PARALLAXMAP _NORMALMAP _SPECGLOSSMAP ok=1
-Cmd: compileSnippet
-  api=9 type=0 insize=934 outsize=21085 kw=POINT SHADOWS_CUBE SHADOWS_SOFT _PARALLAXMAP _NORMALMAP _SPECGLOSSMAP ok=1
-Cmd: compileSnippet
-  api=9 type=1 insize=934 outsize=7 kw=DIRECTIONAL SHADOWS_OFF _PARALLAXMAP _NORMALMAP _SPECGLOSSMAP ok=1
-Cmd: compileSnippet
-  api=9 type=1 insize=934 outsize=7 kw=POINT SHADOWS_CUBE _PARALLAXMAP _NORMALMAP _SPECGLOSSMAP ok=1
-Cmd: compileSnippet
-  api=9 type=1 insize=934 outsize=7 kw=POINT_COOKIE SHADOWS_CUBE SHADOWS_SOFT _PARALLAXMAP _NORMALMAP _SPECGLOSSMAP ok=1
+End of pipe
+
+Quitting shader compiler process

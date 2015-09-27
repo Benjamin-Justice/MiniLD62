@@ -1,12 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[RequireComponent(typeof(MoveWithInput))]
 public class AttackWithInput : MonoBehaviour
 {
-    public GameObject bullet;
-    public float interval = 0.5f;
-
-    float timePassed = 0.0f;
 
     // Use this for initialization
     void Start()
@@ -17,23 +14,22 @@ public class AttackWithInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (canShoot() && attackActive())
+        if (attackActive())
         {
-            Object.Instantiate(bullet, transform.localPosition, transform.localRotation);
-            timePassed = 0.0f;
+            Shoot();
         }
-        timePassed += Time.deltaTime;
     }
 
-    bool canShoot()
+    void Shoot()
     {
-        var value = timePassed > interval;
-        if (GetComponent<MoveWithInput>() != null)
+        PlayerWeapon[] weapons = GetComponentsInChildren<PlayerWeapon>();
+        foreach (PlayerWeapon weapon in weapons)
         {
-            value = !GetComponent<MoveWithInput>().isInTurbo && value;
+            weapon.Shoot();
         }
-        return value;
     }
+
+
 
     static bool attackActive()
     {

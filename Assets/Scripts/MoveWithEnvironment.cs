@@ -3,7 +3,7 @@ using System.Collections;
 
 public class MoveWithEnvironment : MonoBehaviour
 {
-    public float speed = 1.0f;
+    public PlayerSpeed playerSpeed;
 
     // Use this for initialization
     void Start()
@@ -14,7 +14,7 @@ public class MoveWithEnvironment : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.transform.Translate(0.0f, 0.0f, Time.deltaTime * -speed);
+        this.transform.Translate(0.0f, 0.0f, Time.deltaTime * -playerSpeed.currentSpeed);
     }
 
 }

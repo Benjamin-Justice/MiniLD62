@@ -1,21 +1,6 @@
 Base path: /opt/Unity/Editor/Data
-Pipe name: \\.\pipe\UnityShaderCompiler-64bit-3-1831601920
+Pipe name: \\.\pipe\UnityShaderCompiler-64bit-3--1062394112
 Cmd: getPlatforms
-Cmd: compileSnippet
-  api=9 type=0 insize=977 outsize=21156 kw=DIRECTIONAL SHADOWS_SCREEN SHADOWS_NATIVE LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF _PARALLAXMAP _NORMALMAP _SPECGLOSSMAP ok=1
-Cmd: compileSnippet
-  api=9 type=1 insize=977 outsize=7 kw=DIRECTIONAL SHADOWS_SCREEN SHADOWS_NATIVE LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF _PARALLAXMAP _NORMALMAP _SPECGLOSSMAP ok=1
-Cmd: compileSnippet
-  api=9 type=0 insize=934 outsize=19189 kw=POINT_COOKIE SHADOWS_OFF _PARALLAXMAP _NORMALMAP _SPECGLOSSMAP ok=1
-Cmd: compileSnippet
-  api=9 type=0 insize=934 outsize=20913 kw=SPOT SHADOWS_DEPTH SHADOWS_NATIVE _PARALLAXMAP _NORMALMAP _SPECGLOSSMAP ok=1
-Cmd: compileSnippet
-  api=9 type=0 insize=934 outsize=21297 kw=POINT_COOKIE SHADOWS_CUBE SHADOWS_SOFT _PARALLAXMAP _NORMALMAP _SPECGLOSSMAP ok=1
-Cmd: compileSnippet
-  api=9 type=1 insize=934 outsize=7 kw=POINT_COOKIE SHADOWS_OFF _PARALLAXMAP _NORMALMAP _SPECGLOSSMAP ok=1
-Cmd: compileSnippet
-  api=9 type=1 insize=934 outsize=7 kw=POINT_COOKIE SHADOWS_CUBE _PARALLAXMAP _NORMALMAP _SPECGLOSSMAP ok=1
-Cmd: compileSnippet
-  api=9 type=1 insize=934 outsize=7 kw=DIRECTIONAL SHADOWS_SCREEN SHADOWS_NATIVE _PARALLAXMAP _NORMALMAP _SPECGLOSSMAP ok=1
-Cmd: compileSnippet
-  api=9 type=0 insize=1148 outsize=18082 kw=LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF UNITY_HDR_ON _PARALLAXMAP _NORMALMAP _SPECGLOSSMAP ok=1
+End of pipe
+
+Quitting shader compiler process
