@@ -15,6 +15,7 @@ public class StartButton : MonoBehaviour
 
     public void startGame()
     {
+        ScoreManager.score = 0;
         Application.LoadLevel(1);
     }
 

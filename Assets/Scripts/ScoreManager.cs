@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-//TODO Make persistent object over multiple scenes?
 using UnityEngine.UI;
 using System;
 
