@@ -1,8 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
-using System;
-using System.Security.Cryptography.X509Certificates;
-using UnityEngine.UI;
+﻿using System;
+using UnityEngine;
 
 public class MoveWithInput : MonoBehaviour
 {
