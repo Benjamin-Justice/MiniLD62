@@ -18,3 +18,5 @@ This was one buggy ride (Unity Editor for linux is in Alpha).
 That’s also the reason why I didn’t have a web version immediately after the jam.
 
 I managed to make the game I wanted to, but the boss fight didn’t make it in time. I’m still somewhat happy with the result.
+
+Project for Mini Ludum Dare 62. Win/Mac/Linux/Android/WindowsPhone8.1 game in Unity 5.1
